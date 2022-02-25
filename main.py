@@ -2,7 +2,6 @@ import random
 import sys
 
 from PyQt5 import uic
-from PyQt5 import QtWidgets, QtCore
 from PyQt5.QtGui import QPen, QPainter, QColor
 from PyQt5.QtWidgets import QApplication, QMainWindow
 
@@ -36,7 +35,7 @@ class YellowCirclesWidget(QMainWindow):
             qp.begin(self)
             for circle in self.ellipses[:-1]:
                 pen = QPen(QColor(255, 255, 0))
-                pen.setWidth(circle[-1])
+                pen.setWidth(circle[0])
                 qp.setPen(pen)
                 qp.drawEllipse(*circle[:-1], circle[-2])
             qp.end()
